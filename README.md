@@ -33,55 +33,57 @@ Uma questão fundamental é: como escolher o número certo de clusters esperados
 
 Há diversos métodos.
 
-Aqui, oferecemos uma solução simples. A ideia é calcular o agrupamento k-means usando diferentes valores dos clusters k. Em seguida, o wss (dentro da soma do quadrado) é desenhado de acordo com o número de clusters. A localização de uma dobra (método elbow) no gráfico é geralmente considerada como um indicador do número apropriado de grupos.
+Aqui, oferecemos uma solução simples. A ideia é calcular o agrupamento k-means usando diferentes valores dos clusters k. Em seguida, o SQD (soma do quadrado de dentro) é desenhado de acordo com o número de clusters. A localização de uma dobra (método elbow) no gráfico é geralmente considerada como um indicador do número apropriado de grupos.
 
 
 ```{r echo=FALSE}
-
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(factoextra)
+library(grid)
+library(gridExtra)
+library(kableExtra)
+library(ggplot2)
+library(ggthemes)
+library(haven)
+library(readr)
 
-coty <- read.csv2("D:/Users/fabricio_giordanelli/OneDrive - Coty, Inc/Desktop/COTY/BASE_COMPLETA.csv", fileEncoding="UTF-8-BOM",stringsAsFactors=FALSE)
+base <- read.csv2("BASE_COMPLETA.csv", fileEncoding="UTF-8-BOM",stringsAsFactors=FALSE)
 
-
-coty_cluster <- coty  %>%
+base_cluster <- base  %>%
   filter(CATEGORIA == "NAILS") %>%
   filter(MARCA %in% c("RISQUE","COLORAMA", "IMPALA"))
 
-coty_cluster <- coty_cluster %>% filter(AREA == "TOTAL BRASIL")
+base_cluster <- base_cluster %>% filter(AREA == "TOTAL BRASIL")
 
-coty_cluster  <- coty_cluster  %>%
+base_cluster  <- base_cluster  %>%
   mutate(TOTAL = rowSums(.[13:15]))
 
-coty_cluster  <- coty_cluster  %>%
+base_cluster  <- base_base  %>%
   select(PRODUTO, FABRICANTE, MARCA, AREA, SDESC,TOTAL)
 
-
-
-coty_cluster  <- coty_cluster  %>%
+base_cluster  <- base_cluster  %>%
   spread(SDESC, TOTAL)
 
-coty_cluster  <- coty_cluster   %>%
+base_cluster  <- base_cluster   %>%
   mutate(media_prod = VALOR/QUANTIDADE)
 
-is.na(coty_cluster) <- sapply(coty_cluster, is.infinite)
+is.na(base_cluster) <- sapply(base_cluster, is.infinite)
 
-coty_cluster <- coty_cluster %>%
+base_cluster <- base_cluster %>%
   drop_na() %>%
   filter(media_prod>0)
 
 
-coty_cluster2 <- coty_cluster[,-1]
-rownames(coty_cluster2) <- coty_cluster[,1]
+base_cluster2 <- base_cluster[,-1]
+rownames(base_cluster2) <- base_cluster[,1]
 
-coty_cluster2 <- coty_cluster2 %>% select(media_prod)
+base_cluster2 <- base_cluster2 %>% select(media_prod)
 
-coty_cluster3 <- scale(coty_cluster2)
+base_cluster3 <- scale(base_cluster2)
 
-
-fviz_nbclust(coty_cluster3, kmeans, method = "wss") +
+fviz_nbclust(base_cluster3, kmeans, method = "wss") +
   geom_vline(xintercept = 4, linetype = 2)
 ```
 
@@ -97,25 +99,18 @@ Nesse primeiro momento, não separemos por área nem canal. Então usaremos o Br
 
 
 ```{r, fig.width=12, fig.height=8}
-library(grid)
-library(gridExtra)
-library(kableExtra)
-library(ggplot2)
-library(ggthemes)
-library(haven)
-library(readr)
 
 set.seed(123)
 
 km.res=kmeans(coty_cluster3, 4, nstart=25)
 
-coty_cluster4=cbind(coty_cluster2, cluster=km.res$cluster)
+base_cluster4=cbind(base_cluster2, cluster=km.res$cluster)
 
 
-kable(coty_cluster4) %>%
+kable(base_cluster4) %>%
   kable_styling()
 
-fviz_cluster(km.res, data=coty_cluster4,
+fviz_cluster(km.res, data=base_cluster4,
              palette = c("#2E9FDF", "#00AFBB", "#E7B800", "#FC4E07"),
              ellipse.type="euclid",
              star.plot=TRUE,
