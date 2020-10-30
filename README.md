@@ -85,7 +85,7 @@ fviz_nbclust(coty_cluster3, kmeans, method = "wss") +
   geom_vline(xintercept = 4, linetype = 2)
 ```
 
-![Elbow Method]("FIG1.png")
+![Elbow Method](https://github.com/fgiordanelli/Clustering/blob/main/FIG1.png)
 
 O gráfico acima representa a variação dentro dos clusters. Ele diminui à medida que k aumenta, mas pode ser visto uma dobra em k = 4. Esta dobra indica que clusters adicionais além do quarto têm pouco valor. Na próxima seção, classificaremos as observações em 4 clusters.
 
