@@ -64,8 +64,6 @@ Ele classifica objetos em vários grupos (ou seja, clusters), de modo que os obj
 
 No agrupamento k-means, cada cluster é representado por seu centro (ou seja, centróide) que corresponde à média dos pontos atribuídos ao cluster.
 
-![alterar texto aqui](FIG1.png)
-
 
 ## Idéias básicas de K-means
 
@@ -179,7 +177,7 @@ fviz_cluster(km.res, data=coty_cluster4,
              ellipse.type="euclid",
              star.plot=TRUE,
              repel=TRUE,
-             labelsize = 9,
+             labelsize = 10,
              ggtheme=theme_minimal()
 )
 
