@@ -15,7 +15,7 @@ A ideia básica por trás do agrupamento de k-means consiste em definir clusters
 
 Existem vários algoritmos k-means disponíveis. O algoritmo padrão é o algoritmo Hartigan-Wong, que define a variação total dentro do cluster como a soma das distâncias quadradas, distâncias euclidianas entre itens e o centróide correspondente:
 
-![equation](https://latex.codecogs.com/gif.latex?W(C_k)=\sum(x_i-\mu_k)^2%22%20title=%22W(C_k)=\sum(x_i-\mu_k)^2)
+![equation](https://latex.codecogs.com/gif.latex?W(C_k)=\sum(x_i-\mu_k)^2)
 
 
 $W(C_k)=\sum_{x_i}^{c} (x_i−μ_k)^2$
