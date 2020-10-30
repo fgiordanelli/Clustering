@@ -129,4 +129,4 @@ fviz_cluster(km.res, data=coty_cluster4,
 
 
 
-![Clustering]("https://github.com/fgiordanelli/Clustering/blob/main/FIG2.png")
+![Clustering](https://github.com/fgiordanelli/Clustering/blob/main/FIG2.png)
