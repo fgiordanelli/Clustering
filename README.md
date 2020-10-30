@@ -128,18 +128,18 @@ fviz_cluster(km.res, data=coty_cluster4,
 
 
 
-|                  produto                 | media_pond | cluster |   |   |
-|:----------------------------------------:|:----------:|:-------:|---|---|
-|     T. IMPALA,PLUMY,ESMALTE,AVAMILLER    |  5.133333  |    1    |   |   |
-|  T. RISQUE,RENDAS DO BRASIL,ESMALTE,COTY |  4.055109  |    4    |   |   |
-| T. COLORAMA,ASSIM E PRONTO,ESMALTE,COLOR |  4.856510  |    1    |   |   |
-|   T. IMPALA,RECONECTE,ESMALTE,AVAMILLER  |  3.853406  |    4    |   |   |
-|    T. IMPALA,JU PAES,ESMALTE,AVAMILLER   |  4.396149  |    1    |   |   |
-|  T. COLORAMA,VAI BRASIL,ESMALTE,COLORAMA |  4.387858  |    1    |   |   |
-|     T. RISQUE,E CAMPEAO,ESMALTE,COTY     |  4.362416  |    1    |   |   |
-|    T. RISQUE,CINE RISQUE,ESMALTE,COTY    |  4.000000  |    4    |   |   |
-|   T. IMPALA,BAILARINA,ESMALTE,AVAMILLER  |  3.490365  |    4    |   |   |
-|    T. IMPALA,NOVO 70,ESMALTE,AVAMILLER   |  2.917166  |    4    |   |   |
+|                  produto                 | media_pond | cluster |
+|:----------------------------------------:|:----------:|:-------:|
+|     T. IMPALA,PLUMY,ESMALTE,AVAMILLER    |  5.133333  |    1    |
+|  T. RISQUE,RENDAS DO BRASIL,ESMALTE,COTY |  4.055109  |    4    |
+| T. COLORAMA,ASSIM E PRONTO,ESMALTE,COLOR |  4.856510  |    1    |
+|   T. IMPALA,RECONECTE,ESMALTE,AVAMILLER  |  3.853406  |    4    |
+|    T. IMPALA,JU PAES,ESMALTE,AVAMILLER   |  4.396149  |    1    |
+|  T. COLORAMA,VAI BRASIL,ESMALTE,COLORAMA |  4.387858  |    1    |
+|     T. RISQUE,E CAMPEAO,ESMALTE,COTY     |  4.362416  |    1    |
+|    T. RISQUE,CINE RISQUE,ESMALTE,COTY    |  4.000000  |    4    |
+|   T. IMPALA,BAILARINA,ESMALTE,AVAMILLER  |  3.490365  |    4    |
+|    T. IMPALA,NOVO 70,ESMALTE,AVAMILLER   |  2.917166  |    4    |
 
 
 
