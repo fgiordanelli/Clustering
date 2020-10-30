@@ -17,11 +17,9 @@ Existem vários algoritmos k-means disponíveis. O algoritmo padrão é o algori
 
 ![equation](https://latex.codecogs.com/gif.latex?W(C_k)=\sum(x_i-\mu_k)^2)
 
+x se refere a um ponto de dados pertencente ao cluster C
 
-$W(C_k)=\sum_{x_i}^{c} (x_i−μ_k)^2$
-
-$x_i$ se refere a um ponto de dados pertencente ao cluster $C_k$
-$μ_k$ é o valor médio dos pontos atribuídos ao cluster $C_k$
+μ é o valor médio dos pontos atribuídos ao cluster C
 
 Cada observação (xi) é atribuída a um determinado agrupamento de forma que a soma dos quadrados (SS) distância da observação aos seus centros atribuídos do agrupamento μk seja mínima.
 
